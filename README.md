@@ -1,14 +1,14 @@
-##1.Maven配置
+## 1.Maven配置
    + 添加三个spring依赖，分别为:spring-core,spring-context,spring-webmvc,声明版本号
-##2.构建java代码路径
-+ src/main/java 设置为Sources Root
-##3.新建springmvc两个配置
-+ src目录下新建resources，配置为Reources Root在这个目录里面新建两个文件
-+ spring-sevlet配置文件：mvc-dispatcher.xml
-+ spring-mvc配置文件：applicationContext.xnl
-##4.配置web.xml
-+ 主要配置两个节点：filter，servlet
-##5.配置mvc-dispatcher.xml
+## 2.构建java代码路径
+   + src/main/java 设置为Sources Root
+## 3.新建springmvc两个配置
+   + src目录下新建resources，配置为Reources Root在这个目录里面新建两个文件
+   + spring-sevlet配置文件：mvc-dispatcher.xml
+   + spring-mvc配置文件：applicationContext.xnl
+## 4.配置web.xml
+   + 主要配置两个节点：filter，servlet
+## 5.配置mvc-dispatcher.xml
       
       //扫描器，会自动扫描该包下有@Controller注解的类
       <context:component-scan base-package="com.zxling.controller"/>
@@ -24,7 +24,7 @@
           <!--后缀-->
           <property name="suffix" value=".jsp"/>
       </bean>
-##6.新建一个Controller
+## 6.新建一个Controller
            
       @Controller
       @RequestMapping("/developer")
@@ -35,21 +35,21 @@
         }
       }
        
-1. @Controller可在扫描时,将这个扫描成bean
-2. @RequestMapping,dispatchservlet会调用改路径下的方法
-3. 返回值hello,根据配置会找到WEB-INF/views/hello.jsp
-##7.新建对应的jsp视图(hello.jsp)
+   1. 注解Controller可在扫描时,将这个扫描成bean
+   2. 注解RequestMapping,dispatchservlet会调用改路径下的方法
+   3. 返回值hello,根据配置会找到WEB-INF/views/hello.jsp
+## 7.新建对应的jsp视图(hello.jsp)
        <html>
        <body>
            <h2>hello</h2>
        </body>
        </html>
-##8.运行配置Tomcat
+## 8.运行配置Tomcat
         
         访问:http://localhost:8080/say/hello
         可以得到hello.jsp中的内容
        
-##9.总结:遇到的问题
+## 9.总结:遇到的问题
 1. ContextLoaderListener类找不到问题
 
     问题：
