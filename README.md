@@ -35,8 +35,8 @@
         }
       }
        
-   1. 注解Controller可在扫描时,将这个扫描成bean
-   2. 注解RequestMapping,dispatchservlet会调用改路径下的方法
+   1. @Controller可在扫描时,将这个扫描成bean
+   2. @RequestMapping,dispatchservlet会调用改路径下的方法
    3. 返回值hello,根据配置会找到WEB-INF/views/hello.jsp
 ## 7.新建对应的jsp视图(hello.jsp)
        <html>
