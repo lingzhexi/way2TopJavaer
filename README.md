@@ -69,3 +69,22 @@
        执行后，在WEB-INF在增加了lib目录，里面是项目引用的jar包，点击OK。
       ![idaa步骤2](https://www.2cto.com/uploadfile/Collfiles/20180616/20180616143031679.jpg)     
           
+2. 项目启动错误：Error running Tomcat Server: server.xml does not contain virtual host 'localhost'
+      
+    解决方式
+      * 找到Tomcat目录下的server.xml文件
+      * 找到server.xml文件中的<Host></Host>标签，修改name属性为:localhost
+      ![解决方式](https://img-blog.csdn.net/20180714123036237?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2g5ODUxNjExODM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+      * .如果启动还是报：Error running Tomcat Server: server.xml does not contain virtual host 'localhost'.
+        修改hosts文件：windows操作系统路径如下：C:\Windows\System32\drivers\etc
+        打开host文件夹：添加属性
+        127.0.0.1 localhost
+        
+3. IDEA找不到配置文件cannot resolve file applicationContext.xml
+    
+    问题描述：![不识别问题](E:/lzx/way2TopJavaer/总结问题/图片/不识别问题.png)
+    
+    原因：IDEA没有自动识别resouces文件夹
+    
+    解决方式：resources → Mark Directory as→Resources Root
+       
